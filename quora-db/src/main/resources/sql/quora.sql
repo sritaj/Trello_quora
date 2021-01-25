@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS USER_AUTH(
 
 ALTER TABLE USER_AUTH ADD CONSTRAINT FK_USER_AUTH_USER_ID FOREIGN KEY(USER_ID) REFERENCES USERS(ID) ON DELETE CASCADE ;
 
---QUESTION table is created to store the questions related information posted by any user in the Application
+--QUESTION table is created to store the questions related information posted by any userEntity in the Application
 DROP TABLE IF EXISTS QUESTION CASCADE;
 CREATE TABLE IF NOT EXISTS QUESTION(id SERIAL,uuid VARCHAR(200) NOT NULL, content VARCHAR(500) NOT NULL, date TIMESTAMP NOT NULL , user_id INTEGER NOT NULL, PRIMARY KEY(id), FOREIGN KEY (user_id) REFERENCES USERS(id) ON DELETE CASCADE);
 
